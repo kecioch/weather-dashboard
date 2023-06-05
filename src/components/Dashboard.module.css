@@ -1,0 +1,29 @@
+.dashboard {
+  background-color: blue;
+  width: 80%;
+  min-width: 750px;
+  max-width: 85em;
+  min-height: 40em;
+  display: flex;
+  flex-direction: row;
+  border-radius: 1.5em;
+  overflow: hidden;
+}
+
+@media (max-width: 750px) {
+  .dashboard {
+    width: 100%;
+    min-width: auto;
+    flex-direction: column;
+  }
+
+  .currentInfo {
+    width: 100%;
+    padding: 0;
+  }
+
+  .sideInfo {
+    width: 100%;
+    padding: 0;
+  }
+}

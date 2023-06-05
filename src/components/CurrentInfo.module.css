@@ -1,0 +1,32 @@
+.container {
+  background-color: red;
+  width: 30%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  min-height: 20em;
+}
+
+.location {
+  width: 100%;
+  background-color: purple;
+  height: 2em;
+  border-radius: 1em;
+}
+
+.main {
+  width: 100%;
+  background-color: rgb(59, 237, 169);
+  height: 60%;
+  min-height: 5em;
+  border-radius: 1em;
+}
+
+.details {
+  width: 100%;
+  background-color: rgb(56, 83, 73);
+  height: 30%;
+  min-height: 5em;
+  border-radius: 1em;
+}
