@@ -6,3 +6,7 @@
   border-radius: 1em;
   border: 2px solid var(--highlight-primary);
 }
+
+.weatherIcon {
+  font-size: 5em !important;
+}

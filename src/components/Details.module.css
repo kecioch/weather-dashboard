@@ -10,8 +10,10 @@
   border: 2px solid var(--highlight-primary);
 }
 
-.container span {
-
+.container div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .rain {

@@ -7,7 +7,7 @@ const PreviewDay = ({ day }) => {
   return (
     <div className={styles.card}>
       <p>{date?.toLocaleString(navigator.language, { weekday: "long" })}</p>
-      <WeatherIcon />
+      <WeatherIcon code={day?.weathercode.value} />
       <p>
         {`${day?.temperature.max}${day?.temperature.unit}`} /{" "}
         {`${day?.temperature.min}${day?.temperature.unit}`}

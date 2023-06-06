@@ -9,7 +9,7 @@ const Current = ({ data }) => {
       </p>
       <p>{data?.date.toLocaleDateString()}</p>
       <h3>{`${data?.temperature.current}${data?.temperature.unit}`}</h3>
-      <WeatherIcon />
+      <WeatherIcon code={data?.weathercode.value} className={styles.weatherIcon} />
       <p>
         {`${data?.temperature.max}${data?.temperature.unit}`} /{" "}
         {`${data?.temperature.min}${data?.temperature.unit}`}

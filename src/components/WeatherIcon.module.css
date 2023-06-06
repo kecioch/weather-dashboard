@@ -1,7 +1,8 @@
 .icon {
-    width: 5em;
-    height: 5em;
-    background-color: powderblue;
-    border-radius: 1em;
+    /* width: 5em; */
+    /* height: 5em; */
+    /* background-color: powderblue; */
+    /* border-radius: 1em; */
+    font-size: 2em;
     display: inline-block;
 }
