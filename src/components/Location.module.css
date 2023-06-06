@@ -1,0 +1,7 @@
+.container {
+  width: 100%;
+  /* background-color: purple; */
+  /* height: 2em; */
+  border-radius: 1em;
+  border: 2px solid var(--highlight-primary);
+}

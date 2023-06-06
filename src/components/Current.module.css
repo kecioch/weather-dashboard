@@ -1,0 +1,8 @@
+.container {
+  width: 100%;
+  /* background-color: rgb(59, 237, 169); */
+  height: 60%;
+  min-height: 5em;
+  border-radius: 1em;
+  border: 2px solid var(--highlight-primary);
+}

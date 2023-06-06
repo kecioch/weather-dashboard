@@ -1,10 +1,12 @@
+import DayDiagramm from "./DayDiagramm";
+import Preview from "./Preview";
 import styles from "./SideInfo.module.css";
 
-const SideInfo = () => {
+const SideInfo = ({ data }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.day}></div>
-      <div className={styles.preview}></div>
+      <DayDiagramm data={data.day.chartData} />
+      <Preview days={data?.preview.days} />
     </div>
   );
 };

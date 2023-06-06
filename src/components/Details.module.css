@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  /* background-color: rgb(56, 83, 73); */
+  height: 30%;
+  min-height: 5em;
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  border: 2px solid var(--highlight-primary);
+}
+
+.container span {
+
+}
+
+.rain {
+    grid-row: 1;
+    grid-column: 0 1;
+}
+
+.humidity {
+    grid-row: 1;
+    grid-column: 1 2;
+}
+
+.uv {
+    grid-row: 2;
+    grid-column: 0 1;
+}
+
+.wind {
+    grid-row: 2;
+    grid-column: 1 2;
+}
+
+.sunrise {
+    grid-row: 3;
+    grid-column: 0 1;
+}
+
+.sunset {
+    grid-row: 3;
+    grid-column: 1 2;
+}

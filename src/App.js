@@ -11,15 +11,7 @@ import {
   Area,
 } from "recharts";
 import Dashboard from "./components/Dashboard";
-
-const getTimeString = (date) => {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  const hours = String(date.getHours()).padStart(2, "0");
-  const minutes = String(date.getMinutes()).padStart(2, "0");
-  return `${year}-${month}-${day}T${hours}:${minutes}`;
-};
+import { getTimeString } from "./services/Time";
 
 function App() {
   const [data, setData] = useState();
@@ -58,43 +50,6 @@ function App() {
   return (
     <div className="App">
       <Dashboard data={data} />
-      {/* <ResponsiveContainer width="100%" height={300}>
-        <LineChart data={chartData}>
-          <XAxis dataKey="date" />
-          <YAxis yAxisId="temp" />
-          <YAxis yAxisId="rain" orientation="right" />
-          <CartesianGrid strokeDasharray="3 3" />
-          <Tooltip />
-          <Line
-            type="monotone"
-            dataKey="temp"
-            stroke="#8884d8"
-            dot={false}
-            yAxisId="temp"
-          />
-          <Area
-            type="monotone"
-            dataKey="rain"
-            stroke="none"
-            fill="#cce5ff"
-            fillOpacity={0.5}
-            yAxisId="rain"
-          />
-        </LineChart>
-      </ResponsiveContainer> */}
-      {/* <LineChart width={400} height={300} data={chartData}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="value"
-          stroke="#8884d8"
-          name="Temperatur"
-        />
-      </LineChart> */}
     </div>
   );
 }
