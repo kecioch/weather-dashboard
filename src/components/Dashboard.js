@@ -14,7 +14,7 @@ const Dashboard = ({ data }) => {
 
     // Get current date and time
     const currDate = new Date();
-    currDate.setHours(currDate.getHours() - 1);
+    currDate.setHours(currDate.getHours());
     currDate.setMinutes(0);
     const currTimeString = getTimeString(currDate);
 
@@ -74,14 +74,14 @@ const Dashboard = ({ data }) => {
           unit: data.daily_units.weathercode,
         },
       }))
-      .slice(1);
-
+      .slice(1,6)
     // Get current date and time
-    currDate.setHours(currDate.getHours() - 1);
-    const currDateString = getTimeString(currDate);
+    const currentDate = new Date()
+    currentDate.setHours(currentDate.getHours() - 1);
+    const currDateString = getTimeString(currentDate);
 
     // Add 24 hours
-    const toDate = new Date(currDate);
+    const toDate = new Date(currentDate);
     toDate.setHours(toDate.getHours() + 25);
     const toDateString = getTimeString(toDate);
 
