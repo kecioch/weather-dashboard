@@ -1,12 +1,36 @@
 .container {
   width: 100%;
   /* background-color: rgb(59, 237, 169); */
-  height: 60%;
+  /* height: 60%; */
+  flex-grow: 1;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-height: 5em;
   border-radius: 1em;
   border: 2px solid var(--highlight-primary);
 }
 
 .weatherIcon {
-  font-size: 5em !important;
+  font-size: 4em !important;
+  margin-bottom: 0.5em;
+}
+
+.weekday {
+  margin: 0 0 0.1em;
+}
+
+.date {
+  margin: 0;
+}
+
+.tempOverview {
+  margin: 0;
+}
+
+h3 {
+  font-size: 2em;
+  margin: 0.5em 0 0.3em 0;
 }

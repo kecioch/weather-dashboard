@@ -14,7 +14,7 @@ import {
 const DayDiagramm = ({ data }) => {
   return (
     <div className={styles.container}>
-      <ResponsiveContainer width="100%" maxHeight={300}>
+      <ResponsiveContainer width="100%">
         <LineChart data={data}>
           <XAxis dataKey="date" />
           <YAxis yAxisId="temp" />

@@ -1,5 +1,25 @@
 .card {
-    width: 9em;
+    min-width: 7em;
     border-radius: 1em;
     border: 2px solid var(--highlight-primary);
+    padding: 1.8em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.weekday {
+    font-weight: 400;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.tempOverview {
+    margin: 0;
+}
+
+.rain {
+    margin: 0;
 }
