@@ -2,6 +2,7 @@
   --bg-primary: #31404d;
   --highlight-primary: #655aaf;
   --text-primary: #f3f2f1;
+  --mobile-breakpoint: 790px;
 }
 
 body {

@@ -3,12 +3,13 @@
   /* background-color: rgb(59, 237, 169); */
   /* height: 60%; */
   flex-grow: 1;
-  align-self: stretch;
+  /* align-self: stretch; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 5em;
+  height: fit-content;
   border-radius: 1em;
   border: 2px solid var(--highlight-primary);
 }
@@ -33,4 +34,12 @@
 h3 {
   font-size: 2em;
   margin: 0.5em 0 0.3em 0;
+}
+
+@media (max-width: 790px) {
+  .container {
+    width: 15em;
+    min-width: 5em;
+    padding: 1em 0;
+  }
 }

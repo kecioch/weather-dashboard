@@ -8,5 +8,14 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
-  min-height: 20em;
+  min-height: 25em;
+}
+
+@media (max-width: 790px) {
+  .container {
+    width: 100%;
+    max-width: none;
+    justify-content: center;
+    align-items: center;
+  }
 }

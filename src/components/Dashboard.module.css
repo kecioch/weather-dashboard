@@ -16,20 +16,20 @@
   box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 790px) {
   .dashboard {
     width: 100%;
     min-width: auto;
     flex-direction: column;
+    max-height: none;
+    height: fit-content;
+    border-radius: 0;
   }
+}
 
-  .currentInfo {
-    width: 100%;
-    padding: 0;
-  }
-
-  .sideInfo {
-    width: 100%;
-    padding: 0;
+@media (max-height: 590px) {
+  .dashboard {
+    max-height: none;
+    height: fit-content;
   }
 }

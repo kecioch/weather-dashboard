@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  /* padding: 2em; */
 }
 
 ::-webkit-scrollbar {
@@ -37,4 +38,16 @@
 
 *::-moz-scrollbar-thumb:hover {
   background-color: #909090;
+}
+
+@media (max-width: 790px) {
+  .App {
+    align-items: flex-start;
+  }
+}
+
+@media (max-height: 590px) {
+  .App {
+    align-items: flex-start;
+  }
 }

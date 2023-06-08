@@ -7,3 +7,9 @@
   border: 2px solid var(--highlight-primary);
   flex-grow: 1;
 }
+
+@media (max-width: 790px) {
+  .container {
+    height: 15em;
+  }
+}
