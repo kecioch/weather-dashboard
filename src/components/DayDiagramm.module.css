@@ -6,6 +6,7 @@
   border-radius: 1em;
   border: 2px solid var(--highlight-primary);
   flex-grow: 1;
+  padding: ;
 }
 
 @media (max-width: 790px) {

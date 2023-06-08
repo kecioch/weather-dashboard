@@ -1,6 +1,8 @@
 :root {
   --bg-primary: #31404d;
+  --bg-secondary: #2d353c;
   --highlight-primary: #655aaf;
+  --highlight-secondary: #495f73;
   --text-primary: #f3f2f1;
   --mobile-breakpoint: 790px;
 }

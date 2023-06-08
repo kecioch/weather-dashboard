@@ -96,7 +96,10 @@ const Dashboard = ({ data }) => {
 
     setsideInfoData({
       day: {
-        chartData,
+        units: {
+          temp: data.hourly_units.temperature_2m
+        },
+        chart: chartData,
       },
       preview: {
         days,

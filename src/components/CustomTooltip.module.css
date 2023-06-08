@@ -1,0 +1,9 @@
+.tooltip p {
+  margin: 0;
+}
+
+.tooltip .label {
+  margin-bottom: 0.2em;
+  font-weight: bold;
+  color: var(--highlight-primary);
+}
