@@ -23,7 +23,7 @@ const Dashboard = ({ data }) => {
 
     // Set current data
     setCurrData({
-      location: "Lüdenscheid, DE",
+      location: data.location,
       date: currDate,
       temperature: {
         current: data.hourly.temperature_2m[currentTimeIndex],

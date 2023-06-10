@@ -5,3 +5,8 @@
   border-radius: 1em;
   border: 2px solid var(--highlight-primary);
 }
+
+.container p {
+  word-wrap: break-word;
+  padding: 0 1em;
+}

@@ -4,15 +4,13 @@
   --highlight-primary: #655aaf;
   --highlight-secondary: #495f73;
   --text-primary: #f3f2f1;
+  --text-secondary: #495f73;
   --mobile-breakpoint: 790px;
 }
 
 body {
   margin: 0;
   height: 100%;
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif; */
   font-family: "Open Sans", sans-serif;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
