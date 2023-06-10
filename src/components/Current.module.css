@@ -1,9 +1,6 @@
 .container {
   width: 100%;
-  /* background-color: rgb(59, 237, 169); */
-  /* height: 60%; */
   flex-grow: 1;
-  /* align-self: stretch; */
   display: flex;
   flex-direction: column;
   justify-content: center;

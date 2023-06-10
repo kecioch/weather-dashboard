@@ -7,7 +7,6 @@ import { getTimeString } from "../services/Time";
 const Dashboard = ({ data }) => {
   const [currData, setCurrData] = useState();
   const [sideInfoData, setsideInfoData] = useState();
-  console.log("DASHBOARD DATA", data);
 
   useEffect(() => {
     if (!data) return;
@@ -74,9 +73,9 @@ const Dashboard = ({ data }) => {
           unit: data.daily_units.weathercode,
         },
       }))
-      .slice(1,6)
+      .slice(1, 6);
     // Get current date and time
-    const currentDate = new Date()
+    const currentDate = new Date();
     currentDate.setHours(currentDate.getHours() - 1);
     const currDateString = getTimeString(currentDate);
 
@@ -89,15 +88,13 @@ const Dashboard = ({ data }) => {
       .map((el, i) => ({
         date: el,
         temp: data.hourly.temperature_2m[i],
-        // rain: data.hourly.precipitation_probability[i],
-        // rain: data.hourly.is_day[i],
       }))
       .filter((el) => el.date <= toDateString && el.date >= currDateString);
 
     setsideInfoData({
       day: {
         units: {
-          temp: data.hourly_units.temperature_2m
+          temp: data.hourly_units.temperature_2m,
         },
         chart: chartData,
       },

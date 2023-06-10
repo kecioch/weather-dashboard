@@ -1,5 +1,4 @@
 .container {
-  /* background-color: rgb(110, 189, 189); */
   display: flex;
   flex-direction: column;
   gap: 1em;

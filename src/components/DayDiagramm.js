@@ -48,7 +48,7 @@ const DayDiagramm = ({ data }) => {
           <Line
             type="monotone"
             dataKey="temp"
-            stroke="#8884d8"
+            style={{ stroke: "var(--highlight-primary)" }}
             dot={false}
             yAxisId="temp"
           />

@@ -4,7 +4,7 @@ const CustomTooltip = ({ payload, label, unit }) => {
   return (
     <div className={styles.tooltip}>
       <p className={styles.label}>{label?.substr(11)}</p>
-      <p className={styles.item}>{`${payload[0]?.value}${unit}`}</p>
+      <p className={styles.item}>{`${payload && payload[0]?.value}${unit}`}</p>
     </div>
   );
 };

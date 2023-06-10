@@ -1,6 +1,4 @@
 .container {
-  /* background-color: red; */
-  /* min-width: 18em; */
   flex-grow: 1;
   align-self: stretch;
   width: 30%;
