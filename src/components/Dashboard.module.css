@@ -18,18 +18,23 @@
 
 @media (max-width: 790px) {
   .dashboard {
-    width: 100%;
+    width: auto;
+    max-width: none;
     min-width: auto;
     flex-direction: column;
     max-height: none;
-    height: fit-content;
+    min-height: 60em;
     border-radius: 0;
+    height: auto;
+    border-left: none;
+    border-right: none;
   }
 }
 
-@media (max-height: 590px) {
+@media (max-height: 735px) {
   .dashboard {
     max-height: none;
-    height: fit-content;
+    height: auto;
+    margin: auto;
   }
 }

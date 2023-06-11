@@ -4,9 +4,8 @@ import Dashboard from "./components/Dashboard";
 import SearchLocation from "./components/SearchLocation";
 
 function App() {
-  const dateOptions = Intl.DateTimeFormat().resolvedOptions();
   const [data, setData] = useState();
-  const [timeZone] = useState("auto"); //dateOptions.timeZone
+  const [timeZone] = useState("auto");
   const [coordinates, setCoordinates] = useState({
     lat: 51.217989900000006,
     lon: 7.639170289221491,

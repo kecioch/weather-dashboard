@@ -58,6 +58,15 @@
   opacity: 0;
 }
 
+.input:-webkit-autofill,
+.input:autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-primary) inset !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  font-style: inherit !important;
+}
+
 .input:focus + label,
 .input:not(:placeholder-shown) + label {
   top: -25px;

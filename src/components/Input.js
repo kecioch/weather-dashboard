@@ -8,11 +8,12 @@ const Input = ({
   value,
   onChange,
   loading,
+  className,
 }) => {
-  const classesGroup = `${styles.group} ${loading && styles.loading} `;
+  const classes = `${styles.group} ${className}`;
 
   return (
-    <div className={styles.group}>
+    <div className={classes}>
       {loading && (
         <div className={styles.loadingContainer}>
           <div className={styles.loading}></div>

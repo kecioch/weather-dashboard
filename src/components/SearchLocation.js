@@ -56,6 +56,7 @@ const SearchLocation = ({ setLocation, setCoordinates }) => {
       onKeyDown={onKeyDown}
       onChange={onChange}
       loading={isFetching}
+      className={styles.input}
     >
       <GeoAlt /> City
     </Input>

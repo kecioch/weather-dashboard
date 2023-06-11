@@ -11,6 +11,7 @@
 body {
   margin: 0;
   height: 100%;
+  width: 100%;
   font-family: "Open Sans", sans-serif;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -25,10 +26,12 @@ code {
 
 html {
   height: 100%;
+  width: 100%;
   background-color: var(--bg-primary);
   color: var(--text-primary);
 }
 
 #root {
   height: 100%;
+  width: 100%;
 }
