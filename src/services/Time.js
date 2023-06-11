@@ -22,7 +22,7 @@ const getTimeString = (date, timezone) => {
     { value: minute },
   ] = formatter.formatToParts(date);
 
-  return `${year}-${month}-${day}T${hour}:${minute}`;
+  return `${year}-${month}-${day}T${hour === "24" ? "00" : hour}:${minute}`;
 };
 
 export { getTimeString };
