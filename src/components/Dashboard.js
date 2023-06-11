@@ -15,7 +15,7 @@ const Dashboard = ({ data }) => {
     const currDate = new Date();
     currDate.setHours(currDate.getHours());
     currDate.setMinutes(0);
-    const currTimeString = getTimeString(currDate);
+    const currTimeString = getTimeString(currDate, data.timezone);
 
     const currentTimeIndex = data.hourly.time.findIndex(
       (time) => time === currTimeString
@@ -77,12 +77,12 @@ const Dashboard = ({ data }) => {
     // Get current date and time
     const currentDate = new Date();
     currentDate.setHours(currentDate.getHours() - 1);
-    const currDateString = getTimeString(currentDate);
+    const currDateString = getTimeString(currentDate, data.timezone);
 
     // Add 24 hours
     const toDate = new Date(currentDate);
     toDate.setHours(toDate.getHours() + 25);
-    const toDateString = getTimeString(toDate);
+    const toDateString = getTimeString(toDate, data.timezone);
 
     const chartData = data.hourly.time
       .map((el, i) => ({
