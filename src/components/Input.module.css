@@ -9,6 +9,7 @@
   font-weight: inherit;
   text-align: center;
   transition: border-bottom-color 0.3s;
+  padding: 0;
 }
 
 .group {
@@ -17,6 +18,28 @@
   align-items: flex-start;
   position: relative;
   width: 20em;
+}
+
+.loadingContainer {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.loading {
+  overflow: hidden;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: -100%;
+  background-color: var(--highlight-secondary);
+  animation: loading 2s linear infinite;
 }
 
 .label {
@@ -45,4 +68,13 @@
 .input:focus,
 .input:not(:placeholder-shown) {
   border-bottom-color: var(--highlight-primary);
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }

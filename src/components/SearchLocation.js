@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const SearchLocation = ({ setLocation, setCoordinates }) => {
   const [inputValue, setInputValue] = useState("");
+  const [isFetching, setIsFetching] = useState(false);
 
   const fetchLocation = async () => {
     try {
@@ -38,7 +39,9 @@ const SearchLocation = ({ setLocation, setCoordinates }) => {
 
   const onKeyDown = async (ev) => {
     if (ev.key !== "Enter") return;
-    fetchLocation();
+    setIsFetching(true);
+    await fetchLocation();
+    setIsFetching(false);
   };
 
   const onChange = (ev) => {
@@ -52,6 +55,7 @@ const SearchLocation = ({ setLocation, setCoordinates }) => {
       value={inputValue}
       onKeyDown={onKeyDown}
       onChange={onChange}
+      loading={isFetching}
     >
       <GeoAlt /> City
     </Input>

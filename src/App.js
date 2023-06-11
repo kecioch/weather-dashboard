@@ -7,8 +7,11 @@ function App() {
   const dateOptions = Intl.DateTimeFormat().resolvedOptions();
   const [data, setData] = useState();
   const [timeZone] = useState("auto"); //dateOptions.timeZone
-  const [coordinates, setCoordinates] = useState({ lat: 51.2185, lon: 7.659 });
-  const [location, setLocation] = useState("Lüdenscheid");
+  const [coordinates, setCoordinates] = useState({
+    lat: 51.217989900000006,
+    lon: 7.639170289221491,
+  });
+  const [location, setLocation] = useState("Lüdenscheid, DE");
 
   useEffect(() => {
     if (!coordinates || !timeZone) return;
