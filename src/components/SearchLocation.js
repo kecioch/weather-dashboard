@@ -2,6 +2,7 @@ import { GeoAlt } from "react-bootstrap-icons";
 import Input from "./Input";
 import styles from "./SearchLocation.module.css";
 import { useState } from "react";
+import { fetchCity, fetchCoordinates } from "../services/GeoAPI";
 
 const SearchLocation = ({ setLocation, setCoordinates }) => {
   const [inputValue, setInputValue] = useState("");
@@ -10,35 +11,32 @@ const SearchLocation = ({ setLocation, setCoordinates }) => {
   const fetchLocation = async () => {
     try {
       // Fetch city
-      let res = await fetch(`https://geocode.maps.co/search?q=${inputValue}`);
-      if (res.status !== 200) return;
-      let data = await res.json();
-      let cities = data.filter((el) => el.class === "boundary");
-      if (cities.length <= 0) return;
-      const city = cities[0];
-      const cityName = city.display_name.split(",")[0];
+      let city = await fetchCity(inputValue);
+      if (!city) return;
 
       // Fetch country code from city
-      res = await fetch(
-        `https://geocode.maps.co/reverse?lat=${city.lat}&lon=${city.lon}`
-      );
-      if (res.status !== 200) return;
-      data = await res.json();
+      const cityData = await fetchCoordinates(city.lat, city.lon);
 
       // Set coordinates & location
-      setCoordinates({
-        lat: data.lat,
-        lon: data.lon,
-      });
-      setLocation(`${cityName}, ${data.address.country_code.toUpperCase()}`);
+      const coord = {
+        lat: cityData.lat,
+        lon: cityData.lon,
+      };
+      const location = `${
+        city.name
+      }, ${cityData.address.country_code.toUpperCase()}`;
+      setCoordinates(coord);
+      setLocation(location);
       setInputValue("");
+      localStorage.setItem("coordinates", JSON.stringify(coord));
+      localStorage.setItem("location", location);
     } catch (err) {
       console.log(err);
     }
   };
 
   const onKeyDown = async (ev) => {
-    if (ev.key !== "Enter") return;
+    if (ev.key !== "Enter" || isFetching) return;
     setIsFetching(true);
     await fetchLocation();
     setIsFetching(false);
