@@ -7,12 +7,14 @@ import { fetchCity, fetchCoordinates } from "../services/GeoAPI";
 const SearchLocation = ({ setLocation, setCoordinates }) => {
   const [inputValue, setInputValue] = useState("");
   const [isFetching, setIsFetching] = useState(false);
+  const [error, setError] = useState(false);
 
   const fetchLocation = async () => {
     try {
+      setError(false);
       // Fetch city
       let city = await fetchCity(inputValue);
-      if (!city) return;
+      if (!city) return setError(true);
 
       // Fetch country code from city
       const cityData = await fetchCoordinates(city.lat, city.lon);
@@ -32,6 +34,7 @@ const SearchLocation = ({ setLocation, setCoordinates }) => {
       localStorage.setItem("location", location);
     } catch (err) {
       console.log(err);
+      setError(true);
     }
   };
 
@@ -46,6 +49,8 @@ const SearchLocation = ({ setLocation, setCoordinates }) => {
     setInputValue(ev.target.value);
   };
 
+  const classes = `${styles.input} ${error && styles.error}`;
+
   return (
     <Input
       id="location"
@@ -54,7 +59,7 @@ const SearchLocation = ({ setLocation, setCoordinates }) => {
       onKeyDown={onKeyDown}
       onChange={onChange}
       loading={isFetching}
-      className={styles.input}
+      className={classes}
     >
       <GeoAlt /> City
     </Input>
