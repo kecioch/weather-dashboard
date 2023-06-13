@@ -1,6 +1,7 @@
 :root {
   --bg-primary: #31404d;
-  --bg-secondary: #2d353c;
+  --bg-secondary: #2d3944;
+  --bg-tertiary: #232629;
   --highlight-primary: #655aaf;
   --highlight-secondary: #495f73;
   --highlight-danger: #9b0000;
@@ -35,4 +36,10 @@ html {
 #root {
   height: 100%;
   width: 100%;
+}
+
+@media (max-width: 790px) {
+  html {
+    background-color: var(--bg-secondary);
+  }
 }

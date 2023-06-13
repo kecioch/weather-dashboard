@@ -15,11 +15,9 @@
 
 /* Set the style for the scrollbar track */
 ::-webkit-scrollbar-track-piece {
-  background-color: var(--background-secondary);
 }
 
 ::-moz-scrollbar-track {
-  background-color: var(--background-secondary);
 }
 
 /* Set the style for the scrollbar thumb */
@@ -45,6 +43,7 @@
   .App {
     display: block;
     padding-top: 3em;
+    background-color: var(--bg-secondary);
   }
 }
 

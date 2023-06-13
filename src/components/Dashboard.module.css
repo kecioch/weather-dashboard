@@ -1,6 +1,6 @@
 .dashboard {
   border: 2px solid var(--highlight-primary);
-  background-color: #1215180d;
+  background-color: var(--bg-secondary);
   width: 80%;
   min-width: 750px;
   max-width: 70em;
@@ -26,8 +26,8 @@
     min-height: 60em;
     border-radius: 0;
     height: auto;
-    border-left: none;
-    border-right: none;
+    border: 0;
+    box-shadow: none;
   }
 }
 
