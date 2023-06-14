@@ -25,4 +25,12 @@ const getTimeString = (date, timezone) => {
   return `${year}-${month}-${day}T${hour === "24" ? "00" : hour}:${minute}`;
 };
 
-export { getTimeString };
+const calcMsUntilNextHour = () => {
+  const now = new Date();
+  const minutesUntilNextHour = 60 - now.getMinutes();
+  const secondsUntilNextHour = minutesUntilNextHour * 60 - now.getSeconds();
+  const millisecondsUntilNextHour = secondsUntilNextHour * 1000;
+  return millisecondsUntilNextHour;
+};
+
+export { getTimeString, calcMsUntilNextHour };

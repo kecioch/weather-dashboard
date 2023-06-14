@@ -3,16 +3,35 @@ import { useEffect, useState } from "react";
 import Dashboard from "./components/Dashboard";
 import SearchLocation from "./components/SearchLocation";
 import { fetchCoordinates } from "./services/GeoAPI";
+import { fetchWeather } from "./services/WeatherAPI";
+import { calcMsUntilNextHour } from "./services/Time";
 
 function App() {
   const [data, setData] = useState();
   const [timeZone] = useState("auto");
   const [coordinates, setCoordinates] = useState();
   const [location, setLocation] = useState();
+  const [isFetching, setIsFetching] = useState(true);
+  const [refreshInterval, setRefreshInterval] = useState();
 
   const initFallback = () => {
     setLocation("Lüdenscheid, DE");
     setCoordinates({ lat: 51.217989900000006, lon: 7.639170289221491 });
+  };
+
+  const fetchWeatherData = async () => {
+    // setIsFetching(true);
+    try {
+      const weatherData = await fetchWeather(
+        coordinates.lat,
+        coordinates.lon,
+        timeZone
+      );
+      setData({ ...weatherData, location });
+    } catch (err) {
+      console.log(err);
+    }
+    // setIsFetching(false);
   };
 
   useEffect(() => {
@@ -45,14 +64,24 @@ function App() {
 
   useEffect(() => {
     if (!coordinates || !timeZone) return;
+    fetchWeatherData();
 
-    fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${coordinates.lat}&longitude=${coordinates.lon}&hourly=temperature_2m,relativehumidity_2m,precipitation_probability,weathercode,windspeed_10m,uv_index,is_day&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max,precipitation_probability_max&timezone=${timeZone}`
-    ).then(async (res) => {
-      if (res.status !== 200) return;
-      const data = await res.json();
-      setData({ ...data, location });
-    });
+    const startInterval = () => {
+      if (refreshInterval) clearTimeout(refreshInterval);
+      const intervalCallback = () => {
+        const newIntervalTime = calcMsUntilNextHour() + 10000;
+        fetchWeatherData();
+        setRefreshInterval(setTimeout(intervalCallback, newIntervalTime));
+      };
+
+      setRefreshInterval(setTimeout(intervalCallback, 0));
+    };
+
+    startInterval();
+
+    return () => {
+      clearTimeout(refreshInterval);
+    };
   }, [coordinates, timeZone]);
 
   return (
@@ -61,7 +90,7 @@ function App() {
         setCoordinates={setCoordinates}
         setLocation={setLocation}
       />
-      <Dashboard data={data} />
+      <Dashboard data={data} isLoading={isFetching} />
     </div>
   );
 }

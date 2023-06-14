@@ -76,12 +76,12 @@ const Dashboard = ({ data }) => {
       .slice(1, 6);
     // Get current date and time
     const currentDate = new Date();
-    currentDate.setHours(currentDate.getHours() - 1);
+    currentDate.setMinutes(0);
     const currDateString = getTimeString(currentDate, data.timezone);
 
     // Add 24 hours
     const toDate = new Date(currentDate);
-    toDate.setHours(toDate.getHours() + 25);
+    toDate.setHours(toDate.getHours() + 24);
     const toDateString = getTimeString(toDate, data.timezone);
 
     const chartData = data.hourly.time

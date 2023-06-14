@@ -4,8 +4,6 @@ const fetchCoordinates = async (lat, lon) => {
   );
   if (res.status !== 200) throw new Error("Failed to fetch city");
   const data = await res.json();
-  // const address = data.address;
-  //   const name = `${cityName}, ${address.country_code.toUpperCase()}`;
   return data;
 };
 
