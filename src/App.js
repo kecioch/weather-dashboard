@@ -20,7 +20,7 @@ function App() {
   };
 
   const fetchWeatherData = async () => {
-    // setIsFetching(true);
+    setIsFetching(true);
     try {
       const weatherData = await fetchWeather(
         coordinates.lat,
@@ -31,7 +31,7 @@ function App() {
     } catch (err) {
       console.log(err);
     }
-    // setIsFetching(false);
+    setIsFetching(false);
   };
 
   useEffect(() => {
@@ -90,7 +90,7 @@ function App() {
         setCoordinates={setCoordinates}
         setLocation={setLocation}
       />
-      <Dashboard data={data} isLoading={isFetching} />
+      <Dashboard data={data} isLoading={isFetching || !data} />
     </div>
   );
 }

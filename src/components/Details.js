@@ -7,39 +7,58 @@ import {
   Wind,
 } from "react-bootstrap-icons";
 import styles from "./Details.module.css";
+import Placeholder from "./Placeholder";
 
-const Details = ({ data }) => {
+const Details = ({ data, isLoading }) => {
   return (
     <div className={styles.container}>
       <div className={styles.rain}>
-        <span>
-          <Umbrella /> {`${data?.rain.value}${data?.rain.unit}`}
-        </span>
+        {isLoading && <Placeholder />}
+        {!isLoading && (
+          <span>
+            <Umbrella /> {`${data?.rain.value}${data?.rain.unit}`}
+          </span>
+        )}
       </div>
       <div className={styles.humidity}>
-        <span>
-          <Droplet /> {`${data?.humidity.value}${data?.humidity.unit}`}
-        </span>
+        {isLoading && <Placeholder />}
+        {!isLoading && (
+          <span>
+            <Droplet /> {`${data?.humidity.value}${data?.humidity.unit}`}
+          </span>
+        )}
       </div>
       <div className={styles.uv}>
-        <span>
-          <BrightnessHigh /> {`${data?.uv_index.value}${data?.uv_index.unit}`}
-        </span>
+        {isLoading && <Placeholder />}
+        {!isLoading && (
+          <span>
+            <BrightnessHigh /> {`${data?.uv_index.value}${data?.uv_index.unit}`}
+          </span>
+        )}
       </div>
       <div className={styles.wind}>
-        <span>
-          <Wind /> {`${data?.windspeed.value}${data?.windspeed.unit}`}
-        </span>
+        {isLoading && <Placeholder />}
+        {!isLoading && (
+          <span>
+            <Wind /> {`${data?.windspeed.value}${data?.windspeed.unit}`}
+          </span>
+        )}
       </div>
       <div className={styles.sunrise}>
-        <span>
-          <Sunrise /> {data?.sunrise}
-        </span>
+        {isLoading && <Placeholder />}
+        {!isLoading && (
+          <span>
+            <Sunrise /> {data?.sunrise}
+          </span>
+        )}
       </div>
       <div className={styles.sunset}>
-        <span>
-          <Sunset /> {data?.sunset}
-        </span>
+        {isLoading && <Placeholder />}
+        {!isLoading && (
+          <span>
+            <Sunset /> {data?.sunset}
+          </span>
+        )}
       </div>
     </div>
   );

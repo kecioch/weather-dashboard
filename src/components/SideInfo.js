@@ -2,11 +2,11 @@ import DayDiagramm from "./DayDiagramm";
 import Preview from "./Preview";
 import styles from "./SideInfo.module.css";
 
-const SideInfo = ({ data }) => {
+const SideInfo = ({ data, isLoading }) => {
   return (
     <div className={styles.container}>
-      <DayDiagramm data={data?.day} />
-      <Preview days={data?.preview.days} />
+      <DayDiagramm data={data?.day} isLoading={isLoading} />
+      <Preview days={data?.preview.days} isLoading={isLoading} />
     </div>
   );
 };

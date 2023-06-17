@@ -8,11 +8,12 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import Placeholder from "./Placeholder";
 
-const DayDiagramm = ({ data }) => {
+const DayDiagramm = ({ data, isLoading }) => {
   return (
-    <div className={styles.container}>
-      <ResponsiveContainer width="100%">
+    <div className={styles.container} style={{padding: isLoading && "1em"}}>
+      {!isLoading && <ResponsiveContainer width="100%">
         <LineChart
           data={data?.chart}
           margin={{ top: 20, right: 0, bottom: 5, left: 0 }}
@@ -53,7 +54,8 @@ const DayDiagramm = ({ data }) => {
             yAxisId="temp"
           />
         </LineChart>
-      </ResponsiveContainer>
+      </ResponsiveContainer>}
+        {isLoading && <Placeholder style={{height: "15em", width: "100%"}} />}
     </div>
   );
 };

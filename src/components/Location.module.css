@@ -1,9 +1,12 @@
 .container {
   width: 100%;
-  /* background-color: purple; */
-  /* height: 2em; */
+  min-height: 3em;
   border-radius: 1em;
   border: 2px solid var(--highlight-primary);
+}
+
+.container span {
+  margin: 1em;
 }
 
 .container p {

@@ -4,7 +4,7 @@ import CurrentInfo from "./CurrentInfo";
 import SideInfo from "./SideInfo";
 import { getTimeString } from "../services/Time";
 
-const Dashboard = ({ data }) => {
+const Dashboard = ({ data, isLoading }) => {
   const [currData, setCurrData] = useState();
   const [sideInfoData, setsideInfoData] = useState();
 
@@ -106,8 +106,8 @@ const Dashboard = ({ data }) => {
 
   return (
     <div className={styles.dashboard}>
-      <CurrentInfo data={currData} />
-      <SideInfo data={sideInfoData} />
+      <CurrentInfo data={currData} isLoading={isLoading || !currData} />
+      <SideInfo data={sideInfoData} isLoading={isLoading || !sideInfoData} />
     </div>
   );
 };

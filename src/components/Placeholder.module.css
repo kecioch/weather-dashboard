@@ -1,0 +1,19 @@
+.placeholder {
+  width: 100%;
+  min-height: 1em;
+  background-color: #414243;
+  display: block;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #414243;
+  }
+  50% {
+    background-color: #666769;
+  }
+  100% {
+    background-color: #414243;
+  }
+}
