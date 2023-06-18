@@ -4,10 +4,10 @@
 </h1>
 
 <p align="center">
-<img src="./static/weather-dashboard.png" style="width: 70%;"/>
+  <img src="./static/weather-dashboard.png" />
 </p>
 
-This GitHub repository is the result of a fun and educational React exercise I undertook to enhance my frontend development skills. The Weather Dashboard is a sleek and intuitive application that provides you with up-to-date weather information for any location around the world.
+This GitHub repository is the result of a fun and simple React exercise I undertook to enhance my frontend development skills. The Weather Dashboard is a sleek and intuitive application that provides you with up-to-date weather information for any location around the world.
 
 With this dashboard, you can effortlessly check the current weather conditions, including temperature, humidity, wind speed, and more. The interface is designed to be user-friendly and minimalistic, allowing you to quickly search for any city or region and get accurate weather data in real time.
 
