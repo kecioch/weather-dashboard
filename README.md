@@ -3,7 +3,9 @@
 <br>
 </h1>
 
-![weather dashboard](./static/weather-dashboard.png)
+<p align="center">
+<img src="./static/weather-dashboard.png" style="width: 70%;"/>
+</p>
 
 This GitHub repository is the result of a fun and educational React exercise I undertook to enhance my frontend development skills. The Weather Dashboard is a sleek and intuitive application that provides you with up-to-date weather information for any location around the world.
 
