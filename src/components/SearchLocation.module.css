@@ -9,3 +9,18 @@
 .error label {
   color: var(--highlight-danger) !important;
 }
+
+.container {
+  padding: 0 2.5em;
+  position: relative;
+}
+
+.locateUser {
+  position: absolute;
+  right: 10px;
+  top: -5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+}

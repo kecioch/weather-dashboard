@@ -1,13 +1,16 @@
-import { GeoAlt } from "react-bootstrap-icons";
+import { Bullseye, GeoAlt } from "react-bootstrap-icons";
 import Input from "./Input";
 import styles from "./SearchLocation.module.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { fetchCity, fetchCoordinates } from "../services/GeoAPI";
+import { locateUser } from "../services/LocateUser";
 
 const SearchLocation = ({ setLocation, setCoordinates }) => {
   const [inputValue, setInputValue] = useState("");
   const [isFetching, setIsFetching] = useState(false);
   const [error, setError] = useState(false);
+  const [hasFocus, setHasFocus] = useState(false);
+  const setUserLocationRef = useRef();
 
   const fetchLocation = async () => {
     try {
@@ -30,12 +33,31 @@ const SearchLocation = ({ setLocation, setCoordinates }) => {
       setCoordinates(coord);
       setLocation(location);
       setInputValue("");
+      setHasFocus(false);
       localStorage.setItem("coordinates", JSON.stringify(coord));
       localStorage.setItem("location", location);
     } catch (err) {
       console.log(err);
       setError(true);
     }
+  };
+
+  const getUserLocation = async () => {
+    try {
+      setIsFetching("userLocation");
+      const userLocation = await locateUser();
+      setLocation(userLocation.location);
+      setCoordinates(userLocation.coord);
+      localStorage.setItem("coordinates", JSON.stringify(userLocation.coord));
+      localStorage.setItem("location", userLocation.location);
+      setIsFetching(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const onBlur = () => {
+    setTimeout(() => setHasFocus(false), 200);
   };
 
   const onKeyDown = async (ev) => {
@@ -52,17 +74,32 @@ const SearchLocation = ({ setLocation, setCoordinates }) => {
   const classes = `${styles.input} ${error && styles.error}`;
 
   return (
-    <Input
-      id="location"
-      placeholder="City"
-      value={inputValue}
-      onKeyDown={onKeyDown}
-      onChange={onChange}
-      loading={isFetching}
-      className={classes}
-    >
-      <GeoAlt /> City
-    </Input>
+    <div className={styles.container}>
+      <Input
+        id="location"
+        placeholder="City"
+        value={inputValue}
+        onKeyDown={onKeyDown}
+        onChange={onChange}
+        loading={isFetching}
+        className={classes}
+        onFocus={() => setHasFocus(true)}
+        onBlur={onBlur}
+      >
+        <GeoAlt /> City
+      </Input>
+      {navigator.geolocation && hasFocus && (
+        <span
+          className={styles.locateUser}
+          aria-label="Current Location"
+          title="Current Location"
+          onClick={getUserLocation}
+          ref={setUserLocationRef}
+        >
+          <Bullseye />
+        </span>
+      )}
+    </div>
   );
 };
 

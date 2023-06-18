@@ -2,9 +2,9 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import Dashboard from "./components/Dashboard";
 import SearchLocation from "./components/SearchLocation";
-import { fetchCoordinates } from "./services/GeoAPI";
 import { fetchWeather } from "./services/WeatherAPI";
 import { calcMsUntilNextHour } from "./services/Time";
+import { locateUser } from "./services/LocateUser";
 
 function App() {
   const [data, setData] = useState();
@@ -39,23 +39,21 @@ function App() {
       const loadedCoord = await JSON.parse(localStorage.getItem("coordinates"));
       const loadedLocation = localStorage.getItem("location");
 
-      if (loadedCoord && loadedLocation) {
-        setLocation(loadedLocation);
-        setCoordinates(loadedCoord);
-      } else if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          async (position) => {
-            const { latitude: lat, longitude: lon } = position.coords;
-            const cityData = await fetchCoordinates(lat, lon);
-            setLocation(cityData.display_name);
-            setCoordinates({ lat, lon });
-          },
-          (error) => {
-            console.log("Geolocation error:", error);
-            initFallback();
-          }
-        );
-      } else {
+      try {
+        if (loadedCoord && loadedLocation) {
+          setLocation(loadedLocation);
+          setCoordinates(loadedCoord);
+        } else if (navigator.geolocation) {
+          const userLocation = await locateUser();
+          setLocation(userLocation.location);
+          setCoordinates(userLocation.coord);
+          localStorage.setItem(
+            "coordinates",
+            JSON.stringify(userLocation.coord)
+          );
+          localStorage.setItem("location", userLocation.location);
+        }
+      } catch (err) {
         initFallback();
       }
     };

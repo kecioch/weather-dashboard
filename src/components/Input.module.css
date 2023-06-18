@@ -42,6 +42,10 @@
   animation: loading 2s linear infinite;
 }
 
+.loadingUserLocation::after {
+  background-color: var(--highlight-primary);
+}
+
 .label {
   top: -6px;
   left: 2px;

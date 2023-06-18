@@ -9,6 +9,8 @@ const Input = ({
   onChange,
   loading,
   className,
+  onFocus,
+  onBlur,
 }) => {
   const classes = `${styles.group} ${className}`;
 
@@ -16,7 +18,11 @@ const Input = ({
     <div className={classes}>
       {loading && (
         <div className={styles.loadingContainer}>
-          <div className={styles.loading}></div>
+          <div
+            className={`${styles.loading} ${
+              loading === "userLocation" && styles.loadingUserLocation
+            }`}
+          ></div>
         </div>
       )}
       <input
@@ -27,6 +33,8 @@ const Input = ({
         onChange={onChange}
         value={value}
         disabled={loading}
+        onFocus={onFocus}
+        onBlur={onBlur}
       />
       <label className={styles.label} htmlFor={id}>
         {children}
