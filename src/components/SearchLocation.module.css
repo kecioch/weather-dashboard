@@ -24,3 +24,22 @@
   align-items: center;
   font-size: 1.5em;
 }
+
+@media (max-width: 790px) {
+  .content {
+    width: 20em;
+    position: relative;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  .input {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  .locateUser {
+    position: absolute;
+    right: -30px;
+  }
+}

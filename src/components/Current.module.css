@@ -9,6 +9,7 @@
   height: fit-content;
   border-radius: 1em;
   border: 2px solid var(--highlight-primary);
+  padding: 1em 0;
 }
 
 .weatherIcon {

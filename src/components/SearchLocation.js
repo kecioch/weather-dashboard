@@ -75,30 +75,32 @@ const SearchLocation = ({ setLocation, setCoordinates }) => {
 
   return (
     <div className={styles.container}>
-      <Input
-        id="location"
-        placeholder="City"
-        value={inputValue}
-        onKeyDown={onKeyDown}
-        onChange={onChange}
-        loading={isFetching}
-        className={classes}
-        onFocus={() => setHasFocus(true)}
-        onBlur={onBlur}
-      >
-        <GeoAlt /> City
-      </Input>
-      {navigator.geolocation && hasFocus && (
-        <span
-          className={styles.locateUser}
-          aria-label="Current Location"
-          title="Current Location"
-          onClick={getUserLocation}
-          ref={setUserLocationRef}
+      <div className={styles.content}>
+        <Input
+          id="location"
+          placeholder="City"
+          value={inputValue}
+          onKeyDown={onKeyDown}
+          onChange={onChange}
+          loading={isFetching}
+          className={classes}
+          onFocus={() => setHasFocus(true)}
+          onBlur={onBlur}
         >
-          <Bullseye />
-        </span>
-      )}
+          <GeoAlt /> City
+        </Input>
+        {navigator.geolocation && hasFocus && (
+          <span
+            className={styles.locateUser}
+            aria-label="Current Location"
+            title="Current Location"
+            onClick={getUserLocation}
+            ref={setUserLocationRef}
+          >
+            <Bullseye />
+          </span>
+        )}
+      </div>
     </div>
   );
 };

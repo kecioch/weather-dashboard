@@ -4,8 +4,8 @@
   width: 80%;
   min-width: 750px;
   max-width: 70em;
-  max-height: 35em;
-  height: 80vh;
+  min-height: 35em;
+  height: auto;
   display: flex;
   flex-direction: row;
   align-items: flex-center;
