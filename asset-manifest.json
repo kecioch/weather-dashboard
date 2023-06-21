@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/weather-dashboard/static/css/main.954eb09f.css",
-    "main.js": "/weather-dashboard/static/js/main.ec41dcde.js",
+    "main.css": "/weather-dashboard/static/css/main.f4084665.css",
+    "main.js": "/weather-dashboard/static/js/main.4f642c9d.js",
     "static/js/787.580bde2d.chunk.js": "/weather-dashboard/static/js/787.580bde2d.chunk.js",
-    "static/media/weathericons-regular-webfont.svg": "/weather-dashboard/static/media/weathericons-regular-webfont.1341a15172cec8dae06e.svg",
+    "static/media/weathericons-regular-webfont.svg": "/weather-dashboard/static/media/weathericons-regular-webfont.86a76ca5e882e8285706.svg",
     "static/media/weathericons-regular-webfont.eot": "/weather-dashboard/static/media/weathericons-regular-webfont.bb2ec001c20cf752f852.eot",
     "static/media/weathericons-regular-webfont.ttf": "/weather-dashboard/static/media/weathericons-regular-webfont.0942d1e1c447d6ce3ffc.ttf",
     "static/media/weathericons-regular-webfont.woff": "/weather-dashboard/static/media/weathericons-regular-webfont.371511ddba5fdac0538c.woff",
     "static/media/weathericons-regular-webfont.woff2": "/weather-dashboard/static/media/weathericons-regular-webfont.e218aee6928fe3da9ed6.woff2",
     "index.html": "/weather-dashboard/index.html",
-    "main.954eb09f.css.map": "/weather-dashboard/static/css/main.954eb09f.css.map",
-    "main.ec41dcde.js.map": "/weather-dashboard/static/js/main.ec41dcde.js.map",
+    "main.f4084665.css.map": "/weather-dashboard/static/css/main.f4084665.css.map",
+    "main.4f642c9d.js.map": "/weather-dashboard/static/js/main.4f642c9d.js.map",
     "787.580bde2d.chunk.js.map": "/weather-dashboard/static/js/787.580bde2d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.954eb09f.css",
-    "static/js/main.ec41dcde.js"
+    "static/css/main.f4084665.css",
+    "static/js/main.4f642c9d.js"
   ]
 }
