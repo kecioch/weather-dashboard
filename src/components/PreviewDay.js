@@ -1,3 +1,4 @@
+import Container from "./Container";
 import Placeholder from "./Placeholder";
 import styles from "./PreviewDay.module.css";
 import WeatherIcon from "./WeatherIcon";
@@ -6,7 +7,7 @@ import { Umbrella } from "react-bootstrap-icons";
 const PreviewDay = ({ day, isLoading }) => {
   const date = day && new Date(day.date);
   return (
-    <div className={styles.card}>
+    <Container className={styles.card}>
       {!isLoading && (
         <>
           <p className={styles.weekday}>
@@ -28,7 +29,7 @@ const PreviewDay = ({ day, isLoading }) => {
        <Placeholder />
        <Placeholder style={{width: "3em"}} />
       </>}
-    </div>
+    </Container>
   );
 };
 

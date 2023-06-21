@@ -43,7 +43,7 @@
   .App {
     display: block;
     padding-top: 3em;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
   }
 }
 

@@ -1,0 +1,4 @@
+.container {
+  border: 1.5px solid var(--highlight-primary);
+  border-radius: 1em;
+}

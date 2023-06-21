@@ -3,6 +3,7 @@ import styles from "./Dashboard.module.css";
 import CurrentInfo from "./CurrentInfo";
 import SideInfo from "./SideInfo";
 import { getTimeString } from "../services/Time";
+import Container from "./Container";
 
 const Dashboard = ({ data, isLoading }) => {
   const [currData, setCurrData] = useState();
@@ -105,10 +106,10 @@ const Dashboard = ({ data, isLoading }) => {
   }, [data]);
 
   return (
-    <div className={styles.dashboard}>
+    <Container className={styles.dashboard}>
       <CurrentInfo data={currData} isLoading={isLoading || !currData} />
       <SideInfo data={sideInfoData} isLoading={isLoading || !sideInfoData} />
-    </div>
+    </Container>
   );
 };
 

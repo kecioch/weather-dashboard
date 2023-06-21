@@ -1,10 +1,11 @@
 import styles from "./Location.module.css";
 import { GeoAlt } from "react-bootstrap-icons";
 import Placeholder from "./Placeholder";
+import Container from "./Container";
 
 const Location = ({ data, isLoading }) => {
   return (
-    <div className={styles.container}>
+    <Container className={styles.container}>
       {isLoading && (
         <Placeholder style={{width: "auto"}} />
       )}
@@ -13,7 +14,7 @@ const Location = ({ data, isLoading }) => {
           <GeoAlt /> {data}
         </p>
       )}
-    </div>
+    </Container>
   );
 };
 

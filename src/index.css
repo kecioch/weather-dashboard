@@ -1,5 +1,5 @@
 :root {
-  --bg-primary: #31404d;
+  --bg-primary: hsl(208, 22%, 25%);
   --bg-secondary: #2d3944;
   --bg-tertiary: #232629;
   --highlight-primary: #655aaf;
@@ -40,6 +40,6 @@ html {
 
 @media (max-width: 790px) {
   html {
-    background-color: var(--bg-secondary);
+    /* background-color: var(--bg-primary); */
   }
 }

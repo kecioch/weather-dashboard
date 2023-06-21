@@ -9,10 +9,11 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import Placeholder from "./Placeholder";
+import Container from "./Container";
 
 const DayDiagramm = ({ data, isLoading }) => {
   return (
-    <div className={styles.container} style={{padding: isLoading && "1em"}}>
+    <Container className={styles.container} style={{padding: isLoading && "1em"}}>
       {!isLoading && <ResponsiveContainer width="100%">
         <LineChart
           data={data?.chart}
@@ -56,7 +57,7 @@ const DayDiagramm = ({ data, isLoading }) => {
         </LineChart>
       </ResponsiveContainer>}
         {isLoading && <Placeholder style={{height: "15em", width: "100%"}} />}
-    </div>
+    </Container>
   );
 };
 

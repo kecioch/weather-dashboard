@@ -8,10 +8,11 @@ import {
 } from "react-bootstrap-icons";
 import styles from "./Details.module.css";
 import Placeholder from "./Placeholder";
+import Container from "./Container";
 
 const Details = ({ data, isLoading }) => {
   return (
-    <div className={styles.container}>
+    <Container className={styles.container}>
       <div className={styles.rain}>
         {isLoading && <Placeholder />}
         {!isLoading && (
@@ -60,7 +61,7 @@ const Details = ({ data, isLoading }) => {
           </span>
         )}
       </div>
-    </div>
+    </Container>
   );
 };
 

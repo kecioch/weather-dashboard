@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 3em;
   border-radius: 1em;
-  border: 2px solid var(--highlight-primary);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .container span {
@@ -12,4 +12,11 @@
 .container p {
   word-wrap: break-word;
   padding: 0 1em;
+}
+
+@media (max-width: 790px) {
+  .container {
+    background-color: var(--bg-secondary);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
 }

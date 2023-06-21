@@ -1,13 +1,13 @@
 .card {
   min-width: 7em;
   border-radius: 1em;
-  border: 2px solid var(--highlight-primary);
   padding: 1.8em 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1em;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .weekday {
@@ -27,5 +27,7 @@
 @media (max-width: 790px) {
   .card {
     padding: 1em 0.8em;
+    background-color: var(--bg-secondary);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
 }

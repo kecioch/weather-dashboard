@@ -1,10 +1,11 @@
+import Container from "./Container";
 import styles from "./Current.module.css";
 import Placeholder from "./Placeholder";
 import WeatherIcon from "./WeatherIcon";
 
 const Current = ({ data, isLoading }) => {
   return (
-    <div className={styles.container}>
+    <Container className={styles.container}>
       {!isLoading && (
         <>
           <p className={styles.weekday}>
@@ -28,7 +29,9 @@ const Current = ({ data, isLoading }) => {
 
       {isLoading && (
         <>
-          <Placeholder style={{ width: "8em", height: "2em", dispay: "inline"}} />
+          <Placeholder
+            style={{ width: "8em", height: "2em", dispay: "inline" }}
+          />
           <Placeholder style={{ marginTop: "0.5em", width: "8em" }} />
           <Placeholder
             style={{ marginTop: "1em", height: "2em", width: "6em" }}
@@ -44,7 +47,7 @@ const Current = ({ data, isLoading }) => {
           <Placeholder style={{ marginTop: "0.5em", width: "10em" }} />
         </>
       )}
-    </div>
+    </Container>
   );
 };
 

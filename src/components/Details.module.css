@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  border: 2px solid var(--highlight-primary);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .container div {
@@ -61,6 +61,8 @@
   .container {
     padding: 0.8em 0;
     gap: 1.5em;
+    background-color: var(--bg-secondary);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
   .container div {

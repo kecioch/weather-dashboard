@@ -1,5 +1,4 @@
 .dashboard {
-  border: 2px solid var(--highlight-primary);
   background-color: var(--bg-secondary);
   width: 80%;
   min-width: 750px;
@@ -26,8 +25,9 @@
     min-height: 60em;
     border-radius: 0;
     height: auto;
-    border: 0;
+    border: none !important;
     box-shadow: none;
+    background-color: var(--bg-primary);
   }
 }
 
