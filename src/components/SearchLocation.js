@@ -4,6 +4,7 @@ import styles from "./SearchLocation.module.css";
 import { useRef, useState } from "react";
 import { fetchCity, fetchCoordinates } from "../services/GeoAPI";
 import { locateUser } from "../services/LocateUser";
+import delay from "../services/Delay";
 
 const SearchLocation = ({ setLocation, setCoordinates }) => {
   const [inputValue, setInputValue] = useState("");
@@ -18,6 +19,9 @@ const SearchLocation = ({ setLocation, setCoordinates }) => {
       // Fetch city
       let city = await fetchCity(inputValue);
       if (!city) return setError(true);
+
+      // Wait delay because of geocode api restrictions
+      await delay(1100);
 
       // Fetch country code from city
       const cityData = await fetchCoordinates(city.lat, city.lon);
